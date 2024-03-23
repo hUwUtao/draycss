@@ -1,0 +1,72 @@
+// <style>form>table>tbody>tr>td>table>tbody>tr>td:has(img){text-align:center}form>table>tbody>tr>td>table>tbody>tr>td>img{max-width:45vw}form>table>tbody>tr>td>table>tbody>tr>td:has(table){border-radius:10px}</style>
+@import url(https://cdn.stdpi.work/assets/fonts/fvf_fernado/styles.css)
+
+*
+  font-family: 'FVF Fernando 08', 'Verdana', 'Tahoma', 'Trebuchet MS' !important
+
+html
+  background: #111
+  color: #fff
+
+td
+  color: #fff !important
+
+input
+  background: #0000
+  color: #fff
+  border: none
+  border-bottom: 2px solid #fff !important
+  &[type="button"],button
+    background: #000
+    border: 2px solid #fff !important
+    border-radius: 0 !important
+    padding: 0 20px !important
+    padding-bottom: 5px !important
+    color: #fff
+
+    // &.input
+    width: auto !important
+    height: auto !important
+
+    $ts: 64ms ease-in-out
+
+    transition: box-shadow $ts, transform $ts
+    box-shadow: 0 5px #fff
+    &:hover
+      box-shadow: 0 0 #fff
+      transform: translateY(5px)
+
+#sVerification
+  color: #000
+  border: 4px solid #e6e6e6
+
+form
+  & table
+    & td
+      &:has(img):not(td:has(#validated_code))
+        text-align: center
+        & > img
+          max-width: 45vw
+      &[class^="err"]
+        text-align: center
+        &:has(span:empty)
+          height: 0!important
+        &>span
+          color: #f00
+          margin-top: 3px
+          font-size: 14px
+          font-weight: bold
+      // very main panel
+      &:has(>table>tbody>tr.CustomLogin)
+        border: 2px solid #fff !important
+        border-radius: 2px
+        box-shadow: 0px 5px #fff
+        &>table
+          margin: 20px 0 !important
+          width: 100%
+          & tr.CustomLogin
+            display: table-row !important
+            & h3
+              // font-weight: bold
+              font-size: 16px
+              margin: 0
